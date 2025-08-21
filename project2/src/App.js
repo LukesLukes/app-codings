@@ -2,26 +2,25 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  // Cria uma variável e um setter para o item atual
   const [item, setItem] = useState('');
-  // Cria uma variável e um setter para a lista de itens
   const [itens, setItens] = useState(['Arroz', 'Feijão', 'Macarrão']);
+  const [darkMode, setDarkMode] = useState(false); // Estado para o modo escuro
 
-  // Função para adicionar um item à lista
   const adicionarItem = () => {
-    // Se o item já existir, exibe um alerta.
     if (itens.includes(item)) {
       alert('Item já existe na lista!');
       return;
     }
-
-    // Se não existir, adiciona o item à lista e limpa o campo de entrada.
     setItens([...itens, item]);
     setItem('');
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode); // Alterna entre claro e escuro
+  };
+
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? 'dark' : 'light'}`}> {/* Aplica a classe com base no estado */}
       <h1>Lista de Compras</h1>
       <input
         type="text"
@@ -30,6 +29,9 @@ function App() {
         placeholder="Digite o nome do item"
       />
       <button onClick={adicionarItem}>Adicionar Item</button>
+      <button onClick={toggleDarkMode}>
+        {darkMode ? 'Modo Claro' : 'Modo Escuro'}
+      </button>
 
       <hr />
       <h2>Itens na Lista:</h2>
