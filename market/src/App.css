@@ -100,3 +100,12 @@ ol li {
 ol li:last-child {
   border-bottom: none;
 }
+
+/* Estilos adicionais podem ser adicionados conforme necessário */
+
+.logo {
+  height: 40vmin;
+  pointer-events: none;
+  width: 250px;
+  margin-bottom: -10px;
+}
