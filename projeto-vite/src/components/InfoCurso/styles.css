@@ -1,0 +1,32 @@
+/* src\components\InfoCurso\styles.css */
+
+.info-curso {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  background-color: #ffe2e2;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-curso h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.info-curso p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin: 8px 0;
+}
+
+.info-curso ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555;
+}
+
+.info-curso li {
+  margin: 5px 0;
+}
+

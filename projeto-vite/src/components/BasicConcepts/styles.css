@@ -1,0 +1,14 @@
+/* src\components\BasicConcepts\styles.css */
+
+.basic h1{
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #fcafaf;
+}
+
+.basic p{
+  font-size: 16px;
+  line-height: 1.5;
+  color: #371bd1;
+  margin: 10px 0;
+}
