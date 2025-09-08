@@ -1,0 +1,100 @@
+/* src\components\DarkMode\style.css */
+
+.darkmode-toggle {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 100;
+    background: linear-gradient(90deg, #3e4095 60%, #009b3a 100%);
+    color: #ffdf00;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.darkmode-toggle:hover {
+    background: linear-gradient(90deg, #009b3a 60%, #3e4095 100%);
+    color: #ffdf00;
+    transform: scale(1.05);
+}
+
+/* Tema escuro para todo o projeto */
+body.dark-mode,
+.dark-mode .background-principal {
+    background: linear-gradient(120deg, #222 0%, #3e4095 80%);
+    color: #ffdf00;
+}
+
+body.dark-mode .cadastro-jogadores,
+body.dark-mode .listar-jogadores {
+    background: linear-gradient(135deg, #222 0%, #3e4095 100%);
+    color: #ffdf00;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.32);
+}
+
+body.dark-mode .cadastro-jogadores h2,
+body.dark-mode .listar-jogadores h2 {
+    color: #ffdf00;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+body.dark-mode .cadastro-jogadores input,
+body.dark-mode .cadastro-jogadores select,
+body.dark-mode .listar-jogadores li {
+    background: rgba(34,34,34,0.92);
+    color: #ffdf00;
+    border-color: #ffdf00;
+}
+
+body.dark-mode .cadastro-jogadores button[type="submit"],
+body.dark-mode .listar-jogadores li button {
+    background: linear-gradient(90deg, #3e4095 60%, #009b3a 100%);
+    color: #ffdf00;
+}
+
+body.dark-mode .cadastro-jogadores button[type="submit"]:hover,
+body.dark-mode .listar-jogadores li button:hover {
+    background: linear-gradient(90deg, #009b3a 60%, #3e4095 100%);
+    color: #ffdf00;
+}
+
+body.dark-mode .listar-jogadores li:hover {
+    background: #3e4095;
+    color: #ffdf00;
+}
+
+body.dark-mode .listar-jogadores p,
+body.dark-mode .cadastro-jogadores p {
+    color: #ffdf00;
+}
+
+body.dark-mode .listar-jogadores p a,
+body.dark-mode .cadastro-jogadores p a {
+    color: #009b3a;
+}
+
+body.dark-mode .listar-jogadores p a:hover,
+body.dark-mode .cadastro-jogadores p a:hover {
+    color: #ffdf00;
+    text-decoration: underline;
+}
+
+/* Animação de pulso para o fundo */
+@keyframes pulse {
+    0% {
+        transform: scale(1.5);
+        filter: blur(80px);
+        opacity: 0.13;
+    }
+    100% {
+        transform: scale(1.6);
+        filter: blur(90px);
+        opacity: 0.18;
+    }
+}
+
+/* Fim do Dark Mode */

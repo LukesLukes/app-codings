@@ -1,0 +1,118 @@
+/* src\components\CadastroJogadores\styles.css */
+
+/* Tema: Seleção Brasileira - profissional e artístico */
+
+.cadastro-jogadores {
+    background: linear-gradient(135deg, #009b3a 0%, #ffdf00 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    padding: 32px 24px;
+    max-width: 480px;
+    margin: 40px auto;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.cadastro-jogadores::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #3e4095 60%, transparent 100%);
+    opacity: 0.18;
+    z-index: 0;
+}
+
+.cadastro-jogadores h2 {
+    color: #484ae2;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.cadastro-jogadores form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 1;
+    position: relative;
+}
+
+.cadastro-jogadores input,
+.cadastro-jogadores select {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1.5px solid #3e4095;
+    background: rgba(255,255,255,0.92);
+    font-size: 1rem;
+    color: #222;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.cadastro-jogadores input:focus,
+.cadastro-jogadores select:focus {
+    border-color: #009b3a;
+    box-shadow: 0 0 0 2px #ffdf0044;
+}
+
+.cadastro-jogadores select {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.cadastro-jogadores button[type="submit"] {
+    background: linear-gradient(90deg, #009b3a 60%, #ffdf00 100%);
+    color: #3e4095;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 0;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+.cadastro-jogadores button[type="submit"]:hover {
+    background: linear-gradient(90deg, #ffdf00 60%, #009b3a 100%);
+    color: #3e4095;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.cadastro-jogadores input[type="number"]::-webkit-inner-spin-button,
+.cadastro-jogadores input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .cadastro-jogadores {
+        padding: 18px 8px;
+        max-width: 98vw;
+    }
+    .cadastro-jogadores h2 {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+    }
+    .cadastro-jogadores input,
+    .cadastro-jogadores select {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+    .cadastro-jogadores button[type="submit"] {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}
+
+/* Fim do arquivo styles.css */
