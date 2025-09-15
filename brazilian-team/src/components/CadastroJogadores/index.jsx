@@ -49,7 +49,7 @@ function CadastroJogadores({ aoCadastrar }) {
     return (
         <section className="cadastro-jogadores">
             <form onSubmit={aoSubmeter}>
-                <h2>Preencha os dados para cadastrar o jogador</h2>
+                <h2>Preencha os dados para cadastrar o <strong>jogador</strong></h2>
                 <input
                     value={nome}
                     onChange={evento => setNome(evento.target.value)}
