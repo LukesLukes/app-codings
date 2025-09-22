@@ -1,44 +1,58 @@
 // src\pages\Home\index.jsx
 
-import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import hero from '../../assets/images/hero.png';
+
+// Você pode usar uma biblioteca de ícones como react-icons
+// Para instalar: npm install react-icons
 
 function Home() {
-    return (
-        <section className="home">
-            <section className="hero">
-                <div className="hero__wrap">
-                    <h1>Bem-vindo ao Nosso Site</h1>
-                    <p>Descubra nossos serviços e entre em contato conosco para mais informações.</p>
-                    <div className="hero__cta">
-                        <link to="/servicos" className="btn">Nossos Serviços</link>
-                </div>
-                </div>
-                <div className="hero__img">
-                    <img src={ Hero }  alt="Imagem de destaque" />
-                </div>
-            </section>
-            <section className="features">
-                <h2>Por que nos escolher?</h2>
-                <div className="grid cols-3">
-                    <div className="card">
-                        <h3>Qualidade</h3>
-                        <p>Oferecemos serviços de alta qualidade para garantir a satisfação do cliente.</p>
-                    </div>
-                    <div className="card">
-                        <h3>Experiência</h3>
-                        <p>Nossa equipe é composta por profissionais experientes e dedicados.</p>
-                    </div>
-                    <div className="card">
-                        <h3>Suporte</h3>
-                        <p>Estamos sempre disponíveis para ajudar e resolver suas dúvidas.</p>
-                    </div>
-                </div>
-            </section>
-        </section>
-    );
+  return (
+    <>
+      {/* Seção de Boas-Vindas (Hero) */}
+      <section className="hero">
+        <div className="container hero-content">
+          <h1>Soluções Contábeis para o Sucesso do seu Negócio</h1>
+          <p>
+            Simplificamos a contabilidade para que você possa focar no que realmente importa: o crescimento da sua empresa.
+          </p>
+          <Link to="/contato" className="cta-button">Fale com um Especialista</Link>
+        </div>
+      </section>
+
+      {/* Seção de Prévia dos Serviços */}
+      <section className="services-preview">
+        <div className="container">
+          <h2 className="section-title">Nossos Principais Serviços</h2>
+          <div className="services-grid">
+            
+            <div className="service-card">
+              {/* <FaBuilding size={40} className="service-icon" /> */}
+              <h3>Abertura de Empresas</h3>
+              <p>Cuidamos de toda a burocracia para que seu negócio comece com o pé direito, de forma rápida e segura.</p>
+              <Link to="/servicos/abertura" className="card-link">Saiba Mais</Link>
+            </div>
+
+            <div className="service-card">
+              {/* <FaCalculator size={40} className="service-icon" /> */}
+              <h3>Assessoria Contábil</h3>
+              <p>Análise completa das suas finanças para otimizar impostos e garantir a saúde financeira da sua empresa.</p>
+              <Link to="/servicos/assessoria" className="card-link">Saiba Mais</Link>
+            </div>
+
+            <div className="service-card">
+              {/* <FaFileSignature size={40} className="service-icon" /> */}
+              <h3>Gestão Fiscal e Tributária</h3>
+              <p>Planejamento e execução de todas as obrigações fiscais, evitando multas e problemas com o fisco.</p>
+              <Link to="/servicos/gestao" className="card-link">Saiba Mais</Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
 
 export default Home;

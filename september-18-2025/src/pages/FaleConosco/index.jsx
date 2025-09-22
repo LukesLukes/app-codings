@@ -20,19 +20,19 @@ function FaleConosco() {
                 <div className='grid cols-3'>
                     <label className='field'>
                         <span>Nome</span>
-                        <input type="text" name="nome" placeholder='Seu nome' required />
+                        <textarea name="nome" placeholder="Seu nome" rows="6" required></textarea>
                     </label>
                     <label className='field'>
                         <span>Email</span>
-                        <input type="email" name="email" placeholder='Seu email' required />
+                        <textarea name="email" placeholder="Seu email" rows="6" required></textarea>
                     </label>
                     <label className='field'>
                         <span>Assunto</span>
-                        <input type="text" name="assunto" placeholder='Assunto da mensagem' required />
+                        <textarea name="assunto" placeholder="O assunto..." rows="6" required></textarea>
                     </label>
                     <label className='field'>
                         <span>Mensagem</span>
-                        <input type='text' name="mensagem" placeholder='Escreva sua mensagem aqui...' required />
+                        <textarea name="mensagem" placeholder="Escreva sua mensagem aqui..." rows="6" required></textarea>
                     </label>   
                 </div>
                 <button type="submit" className='btn'>Enviar Mensagem</button>
