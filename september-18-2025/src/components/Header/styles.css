@@ -1,124 +1,39 @@
 /* src/components/Header/styles.css */
-
-/* Importando uma fonte do Google Fonts para uma aparência mais refinada */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
-/* Estilos gerais para o corpo do projeto (opcional, mas recomendado) */
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f4f4f4; /* Um cinza claro para o fundo */
-}
-
-/* Container principal do cabeçalho */
 .header {
-  background-color: #003366; /* Um tom de azul escuro e elegante */
-  padding: 15px 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+position: sticky; /* Fica visível no topo quando rola */
+top: 0;
+z-index: 50;
+background: white;
+border-bottom: 1px solid #e5e7eb;
 }
-
-/* Wrapper para controlar a largura do conteúdo do cabeçalho */
-.header_wrap {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header__wrap {
+width: min(1100px, 92%);
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 0;
 }
-
-/* Estilização da marca/logo */
 .brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: #111827;
+text-decoration: none;
+font-weight: 700;
 }
-
 .brand img {
-  height: 40px; /* Ajuste esta altura conforme necessário */
-  width: auto; /* Mantém a proporção da imagem */
-  margin-right: 10px;
+width: 36px;
+height: 36px;
+object-fit: contain;
 }
-
-.brand span {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #FFFFFF;
+.nav { display: flex; gap: 14px; }
+.link {
+text-decoration: none;
+color: #374151; /* cinza-700 */
+padding: 8px 10px;
+border-radius: 8px;
+transition: color .2s ease, background-color .2s ease;
 }
-
-/* Navegação */
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 25px; /* Espaçamento entre os links */
-}
-
-.nav .link {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 1rem; /* Tamanho da fonte dos links */
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-/* Efeito de hover e link ativo */
-.nav .link:hover {
-  color: #FFD700; /* Cor dourada ao passar o mouse */
-  background-color: rgba(255, 215, 0, 0.1);
-}
-
-.nav .link.active {
-  color: #FFD700; /* Cor dourada para o link ativo */
-  font-weight: 700;
-}
-
-/* Adiciona uma linha sutil sob o link ativo para destaque */
-.nav .link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 2px;
-  background-color: #FFD700;
-}
-
-/* Estilos para o cabeçalho quando ele se torna fixo */
-.header.fixed {
-  position: fixed; /* Fixa o cabeçalho no topo da viewport */
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
-
-  /* Animação suave */
-  animation: slideDown 0.5s ease-out;
-
-  /* Sombra para dar destaque */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Animação para o header deslizar para baixo */
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Classe para o corpo da página para evitar que o conteúdo salte */
-/* quando o header se torna fixo */
-.body-padding {
-  padding-top: 70px; /* Altura aproximada do seu header. Ajuste se necessário. */
-}
+.link:hover { color: #111827; background: #f3f4f6; }
+.link.active { color: #2563eb; background: #eff6ff; }

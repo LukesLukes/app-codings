@@ -1,2 +1,6 @@
 /* src\pages\Servicos\styles.css */
 
+.servicos { display: grid; gap: 16px; }
+.servicos h1 { margin: 0; }
+.servicos ul { margin: 0; padding-left: 18px; }
+.servicos li { line-height: 1.4; }
