@@ -1,47 +1,59 @@
-// src\pages\ListarUsuarios\index.jsx
-
-import { useEffect, useState } from 'react';
-import api from '../../services/api';
+import React, { useState, useEffect } from 'react';
+import api from '../../services/api'; // Nosso cliente axios
 import './styles.css';
 
-function ListarUsuarios() {
-    const [usuarios, setUsuarios] = React.useState([]);
-    const [loading, setLoading] = React.useState(true);
+function ListaUsuarios() {
+  // Estado para guardar a lista de usuarios
+  const [usuarios, setUsuarios] = useState([]);
+  // Estado para controlar o feedback de carregamento
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchUsuarios = async () => {
-            try {
-                const response = await api.get('/usuarios');
-                setUsuarios(response.data);
-            } catch (error) {
-                console.error("Erro ao buscar usuários:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchUsuarios();
-    }, []);
-
-    if (loading) {
-        return <div>Carregando usuários...</div>;
+  // useEffect é executado quando o componente é montado
+  useEffect(() => {
+    async function fetchUsuarios() {
+      try {
+        // Faz a chamada GET para a nossa API na rota /usuarios
+        const response = await api.get('/usuarios');
+        setUsuarios(response.data); // Salva os dados no estado
+        setLoading(false); // Finaliza o carregamento
+      } catch (error) {
+        console.error("Erro ao buscar usuarios:", error);
+        setLoading(false); // Finaliza o carregamento mesmo com erro
+      }
     }
+    fetchUsuarios();
+  }, []); // O array vazio [] faz com que o useEffect rode apenas uma vez
 
-    return (
-        <div className="listar-usuarios">
-            <h2>Lista de Usuários</h2>
-            <ul>
-                {usuarios.map((usuario) => (
-                    <li key={usuario.id}>
-                        <strong>Nome:</strong> {usuario.nome} <br />
-                        <strong>Email:</strong> {usuario.email} <br />
-                        <strong>Telefone:</strong> {usuario.telefone}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+  if (loading) {
+    return <div className="lista-container"><h2>Carregando...</h2></div>;
+  }
+
+  return (
+    <div className="lista-container">
+      <h1>Lista de Usuários</h1>
+      {usuarios.length === 0 ? (
+        <p>Nenhum usuário cadastrado.</p>
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Mapeia a lista de usuários para criar uma linha <tr> para cada um */}
+            {usuarios.map(usuario => (
+              <tr key={usuario.id}>
+                <td>{usuario.nome}</td>
+                <td>{usuario.email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
 }
 
-export default ListarUsuarios;
-    
+export default ListaUsuarios;

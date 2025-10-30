@@ -1,0 +1,44 @@
+/* src\components\Footer\styles.css */
+
+.footer {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Adicionado */
+    right: 0; /* Adicionado */
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer p:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+main {
+    margin-top: 80px; /* Altura do header + espaço extra */
+    margin-bottom: 100px; /* Altura do footer + espaço extra */
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1rem;
+        position: fixed; /* Alterado de relative para fixed */
+    }
+    
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
