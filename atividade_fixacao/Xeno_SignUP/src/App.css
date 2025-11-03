@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Reset Básico e Tema de Fundo Global */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; /* Fundo escuro padrão */
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Estrutura do Layout (App.jsx) */
+.app-layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Conteúdo Principal (Main) */
+.app-content {
+  flex: 1; /* Faz o conteúdo crescer e empurrar o footer para baixo */
+  width: 100%;
+}
+
+/*
+  Estilos dos formulários (CadastroClientes/Produtos) e 
+  listas (ListarClientes/Produtos) permanecem em seus 
+  próprios arquivos CSS de componente (styles.css).
+*/
+
+/* Estilo para erros de validação (react-hook-form) */
+.error-message {
+  color: #ff4d4d; /* Vermelho claro para erros */
+  font-size: 0.85rem;
+  margin-top: 5px;
+}

@@ -1,0 +1,17 @@
+/* src\components\Footer\styles.css */
+
+.footer-container {
+  background-color: #0d0d0d; /* Fundo escuro, igual ao header */
+  padding: 25px 30px;
+  margin-top: 50px; /* Adiciona espaço acima do footer */
+  border-top: 2px solid #ff0050; /* Linha de destaque vermelha/rosa neon */
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.footer-text {
+  color: #aaaaaa; /* Cor de texto mais sutil (cinza claro) */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  margin: 5px 0; /* Espaçamento entre as linhas do footer */
+}

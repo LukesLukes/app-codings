@@ -1,0 +1,79 @@
+/* src\pages\ListarClientes\styles.css */
+
+/* Container principal da página (reutilizável) */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1a1a1a; /* Fundo escuro */
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Conteúdo específico da página de listagem */
+.list-page-content {
+  flex: 1; /* Ocupa o espaço entre header e footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza a tabela */
+  padding: 40px 20px;
+}
+
+.list-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  /* Efeito de brilho neon sutil */
+  text-shadow: 0 0 10px rgba(255, 0, 80, 0.5);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Container da tabela para permitir scroll horizontal em telas pequenas */
+.table-container {
+  width: 100%;
+  max-width: 1200px; /* Largura máxima da tabela */
+  overflow-x: auto; /* Adiciona scroll horizontal se necessário */
+  background-color: #0d0d0d;
+  border: 1px solid #ff0050;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.3);
+}
+
+/* Estilo da Tabela */
+.data-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaço entre células */
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #333; /* Linha sutil entre linhas */
+}
+
+/* Cabeçalho da Tabela */
+.data-table th {
+  background-color: #ff0050; /* Destaque neon no cabeçalho */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Corpo da Tabela */
+.data-table tbody tr {
+  background-color: #1f1f1f; /* Fundo da linha */
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito "Zebra" (linhas alternadas) */
+.data-table tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+/* Efeito de hover na linha */
+.data-table tbody tr:hover {
+  background-color: #444; /* Cor de destaque no hover */
+}

@@ -1,0 +1,56 @@
+/* src\components\Header\styles.css*/
+
+.header-container {
+  background-color: #0d0d0d; /* Fundo escuro, quase preto */
+  padding: 15px 30px;
+  border-bottom: 2px solid #ff0050; /* Linha de destaque vermelha/rosa neon */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center; /* Centraliza a barra de navegação */
+  align-items: center;
+}
+
+.nav-container {
+ width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centraliza os itens da lista */
+  align-items: center;
+  gap: 40px; /* Espaçamento entre os links */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #ffffff; /* Texto branco */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e moderna */
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 0;
+  position: relative; /* Necessário para o efeito ::after */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Efeito de hover com linha inferior */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Alinha com a borda do header, se preferir */
+  width: 0; /* Começa sem largura */
+  height: 3px;
+  background-color: #ff0050; /* Cor neon */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+  color: #ff0050; /* Muda a cor do texto no hover */
+}
+
+.nav-item:hover::after {
+  width: 100%; /* Expande a linha no hover */
+}

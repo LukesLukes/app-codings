@@ -1,0 +1,39 @@
+/* src\pages\HomePage\index.jsx */
+
+/* Garante que o container ocupe toda a altura */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Conteúdo principal da HomePage */
+.homepage-content {
+  flex: 1; /* Faz o conteúdo principal crescer para ocupar o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #1a1a1a; /* Tom de cinza escuro para o fundo do conteúdo */
+  color: #ffffff; /* Texto branco */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.homepage-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  /* Efeito de brilho neon sutil, inspirado no Opera GX */
+  text-shadow: 0 0 10px rgba(255, 0, 80, 0.5), 
+               0 0 20px rgba(255, 0, 80, 0.3);
+  margin-bottom: 20px;
+}
+
+.homepage-description {
+  font-size: 1.25rem;
+  color: #cccccc; /* Cinza claro para o texto descritivo */
+  max-width: 600px; /* Limita a largura para melhor legibilidade */
+  line-height: 1.6;
+}
